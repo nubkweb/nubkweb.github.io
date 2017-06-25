@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("/img/pusheen/background.png");
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: left;
+    padding: 2px;
+}
+
+#boarder {
+    border: 5px solid #ffc7d1;
+    width: 610px;
+    height: 510px;
+    margin: 40px auto;
+    border-radius: 5px;
+}
+
+#board {
+    width: 600px;
+    height: 500px;
+    background: #f8f7e0;
+    border-radius: 5px;
+}
