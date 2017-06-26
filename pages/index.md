@@ -35,10 +35,35 @@ permalink: /
     var board = document.getElementById("board");
     for (var i = 0; i < 30; i++) {
         board.insertAdjacentHTML("beforeend", 
-            `<img src="/img/pusheen/${boardArray[i]}">`
+            `<img data-index="${i}" src="/img/pusheen/card_back.jpg">`
         )
     }
+    
+    var flipNumber = 0;
+    var firstFlip;
+    var secondFlip;
+    
+    document.body.addEventListener("click", function (e) {
+        var index = e.target.getAttribute("data-index");
+        if(cardIsFacingDown(index)) {
+            flipNumber++;
+        }
+        figurativelyFlipCard(index);
+    });
+   
+   function cardIsFacingDown(index){
+        return board.children[index].src.includes("card_back.jpg");
+   }
+   
+    function figurativelyFlipCard(index) {
+        var hiddenPusheen = boardArray[index];
+        board.children[index].src = `/img/pusheen/${hiddenPusheen}`;
+        // `/img/pusheen/${hiddenPusheen}` == "/img/pusheen/" + hiddenPusheen;
+        
+    }
 
+    
+    
 
 
 
