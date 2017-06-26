@@ -9,6 +9,8 @@ permalink: /
     <div id="board"></div>
 </div>
 
+<div id="preload" style="display:none"></div>
+
 <script>
 
     var imgArray = [
@@ -28,6 +30,13 @@ permalink: /
         "shersheen.gif",
         "snowman.png"
     ];
+    
+    var preload = document.getElementById("preload");
+    for (var i = 0; i < 15; i++) {
+        preload.insertAdjacentHTML("beforeend", 
+            `<img src="/img/pusheen/${imgArray[i]}">`
+        )
+    }
 
     var boardArray = imgArray.concat(imgArray);
     shuffle(boardArray);
