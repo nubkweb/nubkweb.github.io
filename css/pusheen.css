@@ -3,28 +3,24 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background: url("/img/pusheen/background.png");
 }
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 15vw;
+    height: 15vw;
     display: block;
     float: left;
-    padding: 2px;
-}
-
-#boarder {
-    border: 5px solid #ffc7d1;
-    width: 610px;
-    height: 510px;
-    margin: 40px auto;
-    border-radius: 5px;
+    padding: 5px;
 }
 
 #board {
-    width: 600px;
-    height: 500px;
+    margin: 20px auto;
+    width: 90vw;
+    height: 75vw;
     background: #f8f7e0;
     border-radius: 5px;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.75);
 }

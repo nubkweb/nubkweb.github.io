@@ -5,9 +5,7 @@ permalink: /
 <link rel="stylesheet" href="/css/pusheen.css">
 
 
-<div id="boarder">
-    <div id="board"></div>
-</div>
+<div id="board"></div>
 
 <div id="preload" style="display:none"></div>
 
@@ -48,16 +46,40 @@ permalink: /
         )
     }
     
-    var flipNumber = 0;
-    var firstFlip;
-    var secondFlip;
+    var game = {
+        locked: false,
+        flipNumber: 0,
+        firstFlip: {index: null, img: null},
+        secondFlip: {index: null, img: null}
+    }
     
     document.body.addEventListener("click", function (e) {
         var index = e.target.getAttribute("data-index");
-        if(cardIsFacingDown(index)) {
-            flipNumber++;
+        
+        if (index === null || game.locked || !cardIsFacingDown(index)) {
+            return; // nothing can happen after return
         }
-        figurativelyFlipCard(index);
+        
+        game.locked = true;
+        game.flipNumber++;
+        var hiddenPusheen = figurativelyFlipCard(index);
+        
+        if (game.flipNumber === 1) {
+            game.firstFlip = hiddenPusheen;
+            game.locked = false;
+        } else if (game.flipNumber === 2) {
+            game.secondFlip = hiddenPusheen;
+            if (game.firstFlip.img !== game.secondFlip.img) {
+                setTimeout(function() {
+                    flipCardBack(game.firstFlip.index);
+                    flipCardBack(game.secondFlip.index);
+                    reset();
+                }, 1000);
+            } else {
+                reset();
+            }
+        }
+        console.log(game)
     });
    
    function cardIsFacingDown(index){
@@ -67,15 +89,22 @@ permalink: /
     function figurativelyFlipCard(index) {
         var hiddenPusheen = boardArray[index];
         board.children[index].src = `/img/pusheen/${hiddenPusheen}`;
-        // `/img/pusheen/${hiddenPusheen}` == "/img/pusheen/" + hiddenPusheen;
-        
+        return {index: index, img: hiddenPusheen};
+    }
+    
+    function flipCardBack(index) {
+        board.children[index].src = "/img/pusheen/card_back.jpg";
+    }
+    
+    function reset(){
+        game.flipNumber = 0;
+        game.firstFlip = null;
+        game.secondFlip = null;
+        game.locked = false;
     }
 
     
     
-
-
-
 
 
 
