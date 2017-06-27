@@ -1,9 +1,9 @@
 ---
-permalink: /
+layout: default
+permalink: /pusheen-memory
 ---
 
 <link rel="stylesheet" href="/css/pusheen.css">
-
 
 <div id="board"></div>
 

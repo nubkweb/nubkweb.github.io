@@ -9,17 +9,19 @@ body {
 }
 
 img {
-    width: 15vw;
-    height: 15vw;
+    width: calc(18vh - 10px);
+    height: calc(18vh - 10px);
     display: block;
     float: left;
-    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #545328
 }
 
 #board {
     margin: 20px auto;
-    width: 90vw;
-    height: 75vw;
+    width: 108vh;
+    height: 90vh;
     background: #f8f7e0;
     border-radius: 5px;
     box-shadow: 0 1px 15px rgba(0,0,0,0.75);
