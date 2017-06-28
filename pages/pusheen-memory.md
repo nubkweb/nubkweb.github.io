@@ -16,6 +16,13 @@ permalink: /pusheen-memory
 
 <div id="preload" style="display:none"></div>
 
+<div id="victoryDiv">
+    <div id="megaDiv">
+        <h1>Your score: <span id="finalScore">0</span></h1>
+        <img src="/img/pusheen/mood/victorypusheen.gif"> 
+    </div>
+</div>
+
 
 <script>
 
@@ -47,6 +54,8 @@ permalink: /pusheen-memory
     var pusheenMoodDisplay = document.getElementById("pusheenMood")
     var numberOfMovesDisplay = document.getElementById("numberOfMoves")
     var totalScoreDisplay = document.getElementById("totalScore")
+    var victoryModal = document.getElementById("victoryDiv")
+    var finalScoreDisplay = document.getElementById("finalScore")
     var boardArray = imgArray.concat(imgArray);
     shuffle(boardArray);
 
@@ -65,7 +74,8 @@ permalink: /pusheen-memory
         moves: 0,
         misses: 0,
         hits: 0,
-        score: 0
+        score: 0,
+        flips: 0
     }
     
     document.body.addEventListener("click", function (e) {
@@ -94,17 +104,32 @@ permalink: /pusheen-memory
                 }, 1000);
                 game.hits = 0;
                 game.misses++
-            } else {
+            } else { // if cards match
                 game.misses = 0;
                 game.hits++;
                 game.score = game.score + game.hits * game.hits;
+                game.flips++;
+                if (victory()) {
+                    showVictoryDance();
+                }
                 reset();
             }
             setTimeout(updateGameStatus, 200);
         }
         console.log(game.moves)
+        
+        
     });
-   
+    
+    function victory() {
+        return game.flips === 15;
+    }
+    
+    function showVictoryDance() {
+        finalScoreDisplay.textContent = game.score;
+        victoryModal.style.display = "block";
+    }
+    
     function cardIsFacingDown(index){
          return board.children[index].src.includes("card_back.jpg");
     }
@@ -147,7 +172,6 @@ permalink: /pusheen-memory
         game.locked = false;
     }
 
-    
     
 
 
