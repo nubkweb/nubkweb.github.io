@@ -5,18 +5,17 @@ permalink: /pusheen-memory
 
 <link rel="stylesheet" href="/css/pusheen.css">
 
-<div id="board"></div>
+<div id="ultradiv">
+    <div id="board"></div>
+    <div id="gameStatus">
+        <p id="moves"> Moves: <span id="numberOfMoves">0</span></p>
+        <p id="score"> Score: <span id="totalScore">0</span></p>
+        <img id="pusheenMood" src="/img/pusheen/mood/neutral.gif">
+    </div>
+</div>
 
 <div id="preload" style="display:none"></div>
 
-<div id="gameStatus">
-    <p id="moves"> Moves: <span id="numberOfMoves">0</span></p>
-    <p id="score"> Score: <span id="totalScore">0</span></p>
-</div>
-
-<div id="pusheenDisplay"> 
-     <img id="pusheenMood" src="/img/pusheen/mood/neutral.gif">
-</div>
 
 <script>
 
