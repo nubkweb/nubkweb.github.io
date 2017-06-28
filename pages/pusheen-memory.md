@@ -32,7 +32,7 @@ permalink: /pusheen-memory
         "flowers.jpg",
         "halloween.gif",
         "mermaid.gif",
-        "more_ice_cream.jpg",
+        "more_ice_cream.gif",
         "pusheen_ice_cream.jpg",
         "shersheen.gif",
         "snowman.png"
