@@ -9,6 +9,15 @@ permalink: /pusheen-memory
 
 <div id="preload" style="display:none"></div>
 
+<div id="gameStatus">
+    <p id="moves"> Moves: <span id="numberOfMoves">0</span></p>
+    <p id="score"> Score: <span id="totalScore">0</span></p>
+</div>
+
+<div id="pusheenDisplay"> 
+     <img id="pusheenMood" src="/img/pusheen/mood/neutral.gif">
+</div>
+
 <script>
 
     var imgArray = [
@@ -36,6 +45,9 @@ permalink: /pusheen-memory
         )
     }
 
+    var pusheenMoodDisplay = document.getElementById("pusheenMood")
+    var numberOfMovesDisplay = document.getElementById("numberOfMoves")
+    var totalScoreDisplay = document.getElementById("totalScore")
     var boardArray = imgArray.concat(imgArray);
     shuffle(boardArray);
 
@@ -50,7 +62,11 @@ permalink: /pusheen-memory
         locked: false,
         flipNumber: 0,
         firstFlip: {index: null, img: null},
-        secondFlip: {index: null, img: null}
+        secondFlip: {index: null, img: null},
+        moves: 0,
+        misses: 0,
+        hits: 0,
+        score: 0
     }
     
     document.body.addEventListener("click", function (e) {
@@ -68,6 +84,8 @@ permalink: /pusheen-memory
             game.firstFlip = hiddenPusheen;
             game.locked = false;
         } else if (game.flipNumber === 2) {
+            game.moves++;
+            numberOfMovesDisplay.textContent = game.moves;
             game.secondFlip = hiddenPusheen;
             if (game.firstFlip.img !== game.secondFlip.img) {
                 setTimeout(function() {
@@ -75,16 +93,22 @@ permalink: /pusheen-memory
                     flipCardBack(game.secondFlip.index);
                     reset();
                 }, 1000);
+                game.hits = 0;
+                game.misses++
             } else {
+                game.misses = 0;
+                game.hits++;
+                game.score = game.score + game.hits * game.hits;
                 reset();
             }
+            setTimeout(updateGameStatus, 200);
         }
-        console.log(game)
+        console.log(game.moves)
     });
    
-   function cardIsFacingDown(index){
-        return board.children[index].src.includes("card_back.jpg");
-   }
+    function cardIsFacingDown(index){
+         return board.children[index].src.includes("card_back.jpg");
+    }
    
     function figurativelyFlipCard(index) {
         var hiddenPusheen = boardArray[index];
@@ -96,7 +120,28 @@ permalink: /pusheen-memory
         board.children[index].src = "/img/pusheen/card_back.jpg";
     }
     
-    function reset(){
+    function updateGameStatus() {
+        totalScoreDisplay.textContent = game.score;
+        if (game.misses === 1) {
+           pusheenMoodDisplay.src = "/img/pusheen/mood/fail1.png";
+        } else if (game.misses === 2) {
+            pusheenMoodDisplay.src = "/img/pusheen/mood/fail2.png";
+        } else if (game.misses >= 3) {
+            pusheenMoodDisplay.src = "/img/pusheen/mood/fail3.png";
+        }
+        if (game.hits === 1) {
+           pusheenMoodDisplay.src = "/img/pusheen/mood/happy1.png";
+        } else if (game.hits === 2) {
+            pusheenMoodDisplay.src = "/img/pusheen/mood/happy2.png";
+        } else if (game.hits >= 3) {
+            pusheenMoodDisplay.src = "/img/pusheen/mood/happy3.png";
+        }
+        setTimeout(function() {
+            pusheenMoodDisplay.src = "/img/pusheen/mood/neutral.gif";
+        }, 1500);
+    }
+    
+    function reset() {
         game.flipNumber = 0;
         game.firstFlip = null;
         game.secondFlip = null;
