@@ -78,7 +78,7 @@ permalink: /pusheen-memory
         flips: 0
     }
     
-    document.body.addEventListener("click", function (e) {
+    document.body.addEventListener("mousedown", function (e) {
         var index = e.target.getAttribute("data-index");
         
         if (index === null || game.locked || !cardIsFacingDown(index)) {
