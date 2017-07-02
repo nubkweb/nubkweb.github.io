@@ -20,6 +20,7 @@ permalink: /pusheen-memory
     <div id="megaDiv">
         <h1>Your score: <span id="finalScore">0</span></h1>
         <img src="/img/pusheen/mood/victorypusheen.gif"> 
+        <div id="restartButton">Start new game</div>
     </div>
 </div>
 
@@ -171,6 +172,10 @@ permalink: /pusheen-memory
         game.secondFlip = null;
         game.locked = false;
     }
+    
+    document.getElementById("restartButton").addEventListener("click", function (e) {
+        location.reload();
+    });
 
     
 
