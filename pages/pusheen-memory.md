@@ -10,6 +10,7 @@ permalink: /pusheen-memory
     <div id="gameStatus">
         <p id="moves"> Moves: <span id="numberOfMoves">0</span></p>
         <p id="score"> Score: <span id="totalScore">0</span></p>
+        <p> High-score: <span id="highScore">0</span></p>
         <img id="pusheenMood" src="/img/pusheen/mood/neutral.gif">
     </div>
 </div>
@@ -55,6 +56,7 @@ permalink: /pusheen-memory
     var pusheenMoodDisplay = document.getElementById("pusheenMood")
     var numberOfMovesDisplay = document.getElementById("numberOfMoves")
     var totalScoreDisplay = document.getElementById("totalScore")
+    var highScoreDisplay = document.getElementById("highScore")
     var victoryModal = document.getElementById("victoryDiv")
     var finalScoreDisplay = document.getElementById("finalScore")
     var boardArray = imgArray.concat(imgArray);
@@ -76,8 +78,12 @@ permalink: /pusheen-memory
         misses: 0,
         hits: 0,
         score: 0,
-        flips: 0
+        flips: 0,
+        highscore: 0
     }
+    
+    game.highscore = localStorage.getItem("highscore") || 0;
+    highScoreDisplay.textContent = game.highscore;
     
     document.body.addEventListener("mousedown", function (e) {
         var index = e.target.getAttribute("data-index");
@@ -112,6 +118,10 @@ permalink: /pusheen-memory
                 game.flips++;
                 if (victory()) {
                     showVictoryDance();
+                    if (game.score > game.highscore) {
+                        game.highscore = game.score;
+                        localStorage.setItem("highscore", game.highscore);
+                    }
                 }
                 reset();
             }

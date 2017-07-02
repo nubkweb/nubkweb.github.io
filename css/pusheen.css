@@ -89,6 +89,7 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.45);
     border-radius: 5px;
     font-weight: 700;
+    cursor: pointer;
 }
 #restartButton:active {
     background: #f0ceb9;
