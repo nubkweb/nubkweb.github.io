@@ -1,0 +1,32 @@
+---
+layout: default
+permalink: /cv
+---
+{% for cv in site.data.cv %}
+
+    Name: {{ cv.name }}
+    <br>
+    Email: {{ cv.email }}
+    <br>
+    Phone: {{ cv.phone }}
+    <br>
+    Birthday: {{ cv.birthday }}
+    <br>
+    Citizenship: {{ cv.citizenship }}
+    {% for education in cv.education %}
+        {{ education.school }} - {{ education.program }} - {{ education.year }}
+        <br>
+    {% endfor %}
+    <br>
+    {% for experience in cv.experience %}
+        {{ experience.company }} - {{ experience.position }} - {{ experience.year }}
+        <br>
+    {% endfor %}
+    <br>
+    {% for interest in cv.interest %}
+        {{ interest }},
+    {% endfor %}
+    {% for project in cv.projects %}
+        <a href="{{ project.link }}">{{ project.name }}</a>
+    {% endfor %}
+{% endfor %}
