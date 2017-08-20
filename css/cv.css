@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+html {
+    background: #E4E4E4;
+}
+
+body {
+    padding: 0;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+header {
+    background-color: #EEA7A3;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    color: white;
+    font-size: 40px;
+    border: 5px solid white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 15px;
+}
+main {
+    background-color: #FCFCFC;
+    padding: 10px;
+}
+

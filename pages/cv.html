@@ -1,11 +1,17 @@
 ---
 layout: default
 permalink: /cv
+css: cv.css
 ---
-{% for cv in site.data.cv %}
 
-    Name: {{ cv.name }}
-    <br>
+{% assign cv = site.data.cv %}
+
+
+<body>
+<header>
+    <h1>{{ cv.name }}</h1>
+</header>
+<main>
     Email: {{ cv.email }}
     <br>
     Phone: {{ cv.phone }}
@@ -13,20 +19,25 @@ permalink: /cv
     Birthday: {{ cv.birthday }}
     <br>
     Citizenship: {{ cv.citizenship }}
-    {% for education in cv.education %}
-        {{ education.school }} - {{ education.program }} - {{ education.year }}
-        <br>
-    {% endfor %}
-    <br>
-    {% for experience in cv.experience %}
-        {{ experience.company }} - {{ experience.position }} - {{ experience.year }}
-        <br>
-    {% endfor %}
-    <br>
-    {% for interest in cv.interest %}
-        {{ interest }},
-    {% endfor %}
-    {% for project in cv.projects %}
-        <a href="{{ project.link }}">{{ project.name }}</a>
-    {% endfor %}
-{% endfor %}
+    <ul>
+        {% for education in cv.education %}
+            <li> {{ education.school }} - {{ education.program }} - {{ education.year }} </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for experience in cv.experience %}
+            <li> {{ experience.company }} - {{ experience.position }} - {{ experience.year }} </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for interest in cv.interest %}
+            <li>{{ interest }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for project in cv.projects %}
+            <li><a href="{{ project.link }}">{{ project.name }}</a></li>
+        {% endfor %}
+    </ul>
+</main>
+</body>

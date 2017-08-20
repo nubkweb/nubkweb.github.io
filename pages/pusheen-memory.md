@@ -1,9 +1,8 @@
 ---
 layout: default
 permalink: /pusheen-memory
+css: pusheen.css
 ---
-
-<link rel="stylesheet" href="/css/pusheen.css">
 
 <div id="ultradiv">
     <div id="board"></div>
