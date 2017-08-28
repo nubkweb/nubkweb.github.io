@@ -4,13 +4,16 @@
 }
 
 html {
-    background: #E4E4E4;
+    /*background: #E4E4E4;*/
+    background: #BDADB0;
+
 }
 
 body {
     padding: 0;
     max-width: 800px;
     margin: 10px auto;
+    box-shadow: 25px 25px 40px rgba(0,0,0,.45), -5px 0 20px rgba(0,0,0,.1); /*right, bottom, blur*/
 }
 
 h1, h2, h3, h4, h5 {
@@ -19,7 +22,9 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
-    background-color: #EEA7A3;
+    background-color: #864853;
+    /*background-color: #DB9492;*/
+    /*background-color: #C84D63; pink: #EEA7A3*/
     text-align: center;
     padding: 40px 0;
 }
@@ -48,3 +53,9 @@ ul.cv-list h3 {
     margin-bottom: 0;
 }
 
+footer {
+    background-color: #7D6364;
+    margin: 0;
+    height: 30px;
+    padding: 2px 0;
+}
