@@ -5,9 +5,6 @@
 
 html {
     background: #DDC0B9;
-    /*background: #E4E4E4;*/
-    /*background: #BDADB0; mauve-gray*/
-
 }
 
 body {
@@ -24,7 +21,6 @@ h1, h2, h3, h4, h5 {
 
 header {
     background-color: #583B56;
-    /*background-color: #864853; redish*/
     text-align: center;
     padding: 40px 0;
 }
