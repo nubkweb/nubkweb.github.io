@@ -38,7 +38,24 @@
       "year": "summer 2010"
     }
   ],
-  "interest": ["Gaming", "Cooking", "Reading", "Photography"],
+  "interest": [
+    {
+      "icon": "gamepad",
+      "title": "Gaming"
+    },
+    {
+      "icon": "cutlery",
+      "title": "Cooking"
+    },
+    {
+      "icon": "camera",
+      "title": "Photography"
+    },
+    {
+      "icon": "book",
+      "title": "Reading"
+    }
+  ],
   "projects": [
     {
       "name": "Pusheen memory game",

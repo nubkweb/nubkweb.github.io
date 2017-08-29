@@ -12,18 +12,18 @@ css: cv.css
     <h1>{{ cv.name }}</h1>
 </header>
 <main>
-    <i class="fa fa-envelope" aria-hidden="true"></i>  {{ cv.email }}
+    <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> {{ cv.email }}
     <br>
-    <i class="fa fa-phone" aria-hidden="true"></i>    {{ cv.phone }}
+    <i class="fa fa-fw fa-phone" aria-hidden="true"></i> {{ cv.phone }}
     <br>
-    <i class="fa fa-birthday-cake" aria-hidden="true"></i>  {{ cv.birthday }}
+    <i class="fa fa-fw fa-birthday-cake" aria-hidden="true"></i> {{ cv.birthday }}
     <br>
-    <i class="fa fa-flag" aria-hidden="true"></i>  {{ cv.citizenship }}
+    <i class="fa fa-fw fa-flag" aria-hidden="true"></i> {{ cv.citizenship }}
     <h2>Education</h2>
     <ul class="cv-list">
         {% for education in cv.education %}
             <li>
-                <h3>{{ education.program }} <span class="year" >({{ education.year }})</span></h3>
+                <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
                 <p>{{ education.school }}</p>
             </li>
         {% endfor %}
@@ -38,9 +38,12 @@ css: cv.css
         {% endfor %}
     </ul>
     <h2>Interests</h2>
-    <ul>
+    <ul class="tag-list">
         {% for interest in cv.interest %}
-            <li>{{ interest }}</li>
+            <li>
+                <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
+                <span class="title">{{ interest.title }}</span>
+            </li>
         {% endfor %}
     </ul>
     <h2>Projects</h2>

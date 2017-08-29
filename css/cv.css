@@ -58,6 +58,31 @@ ul.cv-list .year {
     font-size: 80%;
 }
 
+ul.tag-list li {
+    background-color: #D5D5D5;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+ul.tag-list li .title {
+    padding: 0 6px;
+    font-size: 14px;
+}
+
+ul.tag-list li > * {
+    float: left;
+    line-height: 25px;
+}
+
+ul.tag-list .fa {
+    background-color: #5b212d;
+    color: #f0f0f0;
+    height: 25px;
+    width: 27px;
+}
+
 footer {
     background-color: #CECECE;
     margin: 0;
