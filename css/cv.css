@@ -11,7 +11,13 @@ body {
     padding: 0;
     max-width: 800px;
     margin: 10px auto;
-    box-shadow: 25px 25px 40px rgba(0,0,0,.45), -5px 0 20px rgba(0,0,0,.1); /*right, bottom, blur*/
+    box-shadow: 25px 25px 40px rgba(0, 0, 0, .45), -5px 0 20px rgba(0, 0, 0, .1); /*right, bottom, blur*/
+}
+
+a {
+    color: #91227a;
+    text-decoration: none;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -33,10 +39,12 @@ header h1 {
     display: inline-block;
     padding: 5px 15px;
 }
+
 main {
     background-color: #FCFCFC;
     padding: 20px;
 }
+
 ul {
     list-style: none;
 }
