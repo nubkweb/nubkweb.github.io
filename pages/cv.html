@@ -23,7 +23,7 @@ css: cv.css
     <ul class="cv-list">
         {% for education in cv.education %}
             <li>
-                <h3>{{ education.program }} ({{ education.year }})</h3>
+                <h3>{{ education.program }} <span class="year" >({{ education.year }})</span></h3>
                 <p>{{ education.school }}</p>
             </li>
         {% endfor %}
@@ -32,7 +32,7 @@ css: cv.css
     <ul class="cv-list">
         {% for experience in cv.experience %}
             <li>
-                <h3>{{ experience.position }} ({{ experience.year }})</h3>
+                <h3>{{ experience.position }} <span class="year">({{ experience.year }})</span></h3>
                 <p>{{ experience.company }}</p>
             </li>
         {% endfor %}
