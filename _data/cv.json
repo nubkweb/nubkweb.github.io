@@ -1,9 +1,23 @@
 {
   "name": "Nicole Uybengkee",
-  "email": "nicole.ubk@outlook.com",
-  "phone": "94155432",
-  "birthday": "03.02.1993",
-  "citizenship": "Norwegian citizen",
+  "details": [
+    {
+      "icon": "envelope",
+      "title": "nicole.ubk@outlook.com"
+    },
+    {
+      "icon": "phone",
+      "title": "94155432"
+    },
+    {
+      "icon": "birthday-cake",
+      "title": "03.02.1993"
+    },
+    {
+      "icon": "flag",
+      "title": "Norwegian citizen"
+    }
+  ],
   "education": [
     {
       "school": "Norwegian University of Science and Technology",

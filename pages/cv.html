@@ -13,13 +13,14 @@ css: cv.css
 </header>
 <main>
     <div id="left-body">
-        <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> {{ cv.email }}
-        <br>
-        <i class="fa fa-fw fa-phone" aria-hidden="true"></i> {{ cv.phone }}
-        <br>
-        <i class="fa fa-fw fa-birthday-cake" aria-hidden="true"></i> {{ cv.birthday }}
-        <br>
-        <i class="fa fa-fw fa-flag" aria-hidden="true"></i> {{ cv.citizenship }}
+        <ul class="icon-list">
+            {% for details in cv.details %}
+                <li>
+                    <i class="fa fa-fw fa-{{ details.icon }}" aria-hidden="true"></i>
+                    <span class="title">{{ details.title }}</span>
+                </li>
+            {% endfor %}
+        </ul>
     </div>
     <div id="right-body">
         <h2>Education</h2>
