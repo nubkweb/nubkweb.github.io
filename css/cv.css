@@ -21,7 +21,6 @@ hr {
 a {
     color: #91227a;
     text-decoration: none;
-
 }
 
 h1, h2, h3, h4, h5 {
@@ -32,6 +31,7 @@ h1, h2, h3, h4, h5 {
 h2 {
     margin-top: 0;
 }
+
 header {
     background-color: #583B56;
     text-align: center;
