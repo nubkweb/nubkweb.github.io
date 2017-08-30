@@ -63,6 +63,11 @@ main {
     padding: 20px;
 }
 
+#left-body .fa {
+    color: #373737;
+    margin-bottom: 10px;
+}
+
 ul {
     list-style: none;
 }
