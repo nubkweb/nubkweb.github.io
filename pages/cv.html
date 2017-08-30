@@ -21,6 +21,16 @@ css: cv.css
                 </li>
             {% endfor %}
         </ul>
+        <hr>
+        <ul class="social-list">
+            {% for social in cv.social %}
+                <li>
+                    <i class="fa fa-fw fa-{{ social.icon }}" aria-hidden="true"></i>
+                    <a target="_blank" href="{{ social.link }}">{{ social.title }}</a>
+
+                </li>
+            {% endfor %}
+        </ul>
     </div>
     <div id="right-body">
         <h2>Education</h2>

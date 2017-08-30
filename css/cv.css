@@ -76,6 +76,15 @@ ul.icon-list li {
     margin-bottom: 10px;
 }
 
+ul.social-list {
+    padding: 0;
+    color: #373737;
+}
+
+ul.social-list li {
+    margin-bottom: 10px;
+}
+
 ul.cv-list p {
     margin-top: 0;
 }

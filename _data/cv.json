@@ -18,6 +18,18 @@
       "title": "Norwegian citizen"
     }
   ],
+  "social" : [
+    {
+      "icon": "linkedin",
+      "link": "https://www.linkedin.com/in/nicole-uybengkee/",
+      "title": "/in/nicole-uybengkee"
+    },
+    {
+      "icon": "github-alt",
+      "link": "https://github.com/nubk",
+      "title": "/nubk"
+    }
+  ],
   "education": [
     {
       "school": "Norwegian University of Science and Technology",
