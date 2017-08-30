@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5 {
     font-weight: 400;
 }
 
+h2 {
+    margin-top: 0;
+}
 header {
     background-color: #583B56;
     text-align: center;
@@ -42,6 +45,21 @@ header h1 {
 
 main {
     background-color: #FCFCFC;
+    overflow: auto;
+}
+
+#left-body {
+    float: left;
+    width: 270px;
+    background-color: #EEE;
+    height: 100%;
+    padding: 20px;
+}
+
+#right-body {
+    float: left;
+    width: calc(100% - 270px);
+    height: 100%;
     padding: 20px;
 }
 

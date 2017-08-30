@@ -12,46 +12,51 @@ css: cv.css
     <h1>{{ cv.name }}</h1>
 </header>
 <main>
-    <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> {{ cv.email }}
-    <br>
-    <i class="fa fa-fw fa-phone" aria-hidden="true"></i> {{ cv.phone }}
-    <br>
-    <i class="fa fa-fw fa-birthday-cake" aria-hidden="true"></i> {{ cv.birthday }}
-    <br>
-    <i class="fa fa-fw fa-flag" aria-hidden="true"></i> {{ cv.citizenship }}
-    <h2>Education</h2>
-    <ul class="cv-list">
-        {% for education in cv.education %}
-            <li>
-                <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
-                <p>{{ education.school }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-    <h2>Experience</h2>
-    <ul class="cv-list">
-        {% for experience in cv.experience %}
-            <li>
-                <h3>{{ experience.position }} <span class="year">({{ experience.year }})</span></h3>
-                <p>{{ experience.company }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-    <h2>Interests</h2>
-    <ul class="tag-list">
-        {% for interest in cv.interest %}
-            <li>
-                <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
-                <span class="title">{{ interest.title }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-    <h2>Projects</h2>
-    <ul>
-        {% for project in cv.projects %}
-            <li><a href="{{ project.link }}">{{ project.name }}</a></li>
-        {% endfor %}
-    </ul>
+    <div id="left-body">
+        <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> {{ cv.email }}
+        <br>
+        <i class="fa fa-fw fa-phone" aria-hidden="true"></i> {{ cv.phone }}
+        <br>
+        <i class="fa fa-fw fa-birthday-cake" aria-hidden="true"></i> {{ cv.birthday }}
+        <br>
+        <i class="fa fa-fw fa-flag" aria-hidden="true"></i> {{ cv.citizenship }}
+    </div>
+    <div id="right-body">
+        <h2>Education</h2>
+        <ul class="cv-list">
+            {% for education in cv.education %}
+                <li>
+                    <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
+                    <p>{{ education.school }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Experience</h2>
+        <ul class="cv-list">
+            {% for experience in cv.experience %}
+                <li>
+                    <h3>{{ experience.position }} <span class="year">({{ experience.year }})</span></h3>
+                    <p>{{ experience.company }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Interests</h2>
+        <ul class="tag-list">
+            {% for interest in cv.interest %}
+                <li>
+                    <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
+                    <span class="title">{{ interest.title }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Projects</h2>
+        <ul>
+            {% for project in cv.projects %}
+                <li><a href="{{ project.link }}">{{ project.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </main>
 <footer>
 </footer>
