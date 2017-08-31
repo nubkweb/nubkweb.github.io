@@ -1,3 +1,10 @@
+---
+layout: default
+permalink: /cv-source
+---
+
+
+```
 {
   "name": "Nicole Uybengkee",
   "details": [
@@ -99,3 +106,5 @@
     }
   ]
 }
+
+```

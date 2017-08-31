@@ -6,7 +6,6 @@ css: cv.css
 
 {% assign cv = site.data.cv %}
 
-
 <body>
 <header>
     <h1>{{ cv.name }}</h1>
@@ -53,7 +52,7 @@ css: cv.css
         </ul>
         <h2>Interests</h2>
         <ul class="tag-list">
-            {% for interest in cv.interest %}
+            {% for interest in cv.interests %}
                 <li>
                     <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
                     <span class="title">{{ interest.title }}</span>
@@ -63,16 +62,21 @@ css: cv.css
         <h2>Projects</h2>
         <ul class="project-list">
             {% for project in cv.projects %}
-                <li><a href="{{ project.link }}">{{ project.name }}</a></li>
-                <ul class="project-tag-list">
-                    {% for tag in project.tags %}
-                        <li><span class="title">{{ tag }}</span></li>
-                    {% endfor %}
-                </ul>
+                <li>
+                    <img class="project-image" src="/img/cv/{{ project.image }}">
+                    <div class="content">
+                        <a href="{{ project.link }}">{{ project.name }}</a>
+                        <p>{{ project.description }}</p>
+                        <ul class="project-tag-list">
+                            {% for tag in project.tags %}
+                                <li><span class="title">{{ tag }}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     </div>
-
 </main>
 <footer>
 </footer>

@@ -9,8 +9,8 @@ html {
 
 body {
     padding: 0;
-    max-width: 800px;
-    margin: 10px auto;
+    max-width: 880px;
+    margin: 35px auto;
     box-shadow: 25px 25px 40px rgba(0, 0, 0, .45), -5px 0 20px rgba(0, 0, 0, .1); /*right, bottom, blur*/
 }
 
@@ -125,6 +125,46 @@ ul.tag-list .fa {
     color: #f0f0f0;
     height: 25px;
     width: 27px;
+}
+
+ul.project-list li {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+ul.project-list li > * {
+    float: left;
+}
+
+ul.project-list .project-image {
+    width: 100px;
+    display: block;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+ul.project-list .content {
+    width: calc(100% - 110px)
+}
+
+ul.project-list .content p {
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+
+ul.project-tag-list {
+    padding: 0;
+}
+
+ul.project-tag-list li {
+    background-color: #D5D5D5;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 2px 6px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: inline-block;
 }
 
 footer {
