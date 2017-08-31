@@ -3,7 +3,6 @@ layout: default
 permalink: /cv-source
 ---
 
-
 ```
 {
   "name": "Nicole Uybengkee",
@@ -55,7 +54,7 @@ permalink: /cv-source
     },
     {
       "school": "Colegio de la Inmaculada Concepcion",
-      "program": "GED",
+      "program": "General Education",
       "year": "2006 - 2010"
     }
   ],
@@ -67,8 +66,8 @@ permalink: /cv-source
     },
     {
       "company": "Myra barnehage",
-      "position": "Barnehageassistent",
-      "year": "summer 2010"
+      "position": "Assistant",
+      "year": "Summer 2010"
     }
   ],
   "interests": [
@@ -106,5 +105,4 @@ permalink: /cv-source
     }
   ]
 }
-
 ```
