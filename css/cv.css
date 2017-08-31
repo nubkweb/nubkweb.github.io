@@ -10,7 +10,7 @@ html {
 body {
     padding: 0;
     max-width: 880px;
-    margin: 35px auto;
+    margin: 35px auto 50px;
     box-shadow: 25px 25px 40px rgba(0, 0, 0, .45), -5px 0 20px rgba(0, 0, 0, .1); /*right, bottom, blur*/
 }
 
@@ -48,23 +48,21 @@ header h1 {
 }
 
 main {
-    background-color: #FCFCFC;
+    background-color: #EEE;
     overflow: auto;
 }
 
 #left-body {
     float: left;
     width: 270px;
-    background-color: #EEE;
-    height: 100%;
     padding: 20px;
 }
 
 #right-body {
     float: left;
     width: calc(100% - 270px);
-    height: 100%;
     padding: 20px;
+    background-color: #FFF;
 }
 
 ul {
