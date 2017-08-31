@@ -61,9 +61,14 @@ css: cv.css
             {% endfor %}
         </ul>
         <h2>Projects</h2>
-        <ul>
+        <ul class="project-list">
             {% for project in cv.projects %}
                 <li><a href="{{ project.link }}">{{ project.name }}</a></li>
+                <ul class="project-tag-list">
+                    {% for tag in project.tags %}
+                        <li><span class="title">{{ tag }}</span></li>
+                    {% endfor %}
+                </ul>
             {% endfor %}
         </ul>
     </div>

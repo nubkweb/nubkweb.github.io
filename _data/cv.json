@@ -18,7 +18,7 @@
       "title": "Norwegian citizen"
     }
   ],
-  "social" : [
+  "social": [
     {
       "icon": "linkedin",
       "link": "https://www.linkedin.com/in/nicole-uybengkee/",
@@ -85,11 +85,13 @@
   "projects": [
     {
       "name": "Pusheen memory game",
-      "link": "/pusheen-memory"
+      "link": "/pusheen-memory",
+      "tags": [ "CSS", "HTML", "JavaScript"]
     },
     {
       "name": "Online CV",
-      "link": "#"
+      "link": "#",
+      "tags": [ "CSS", "HTML", "JavaScript" ]
     }
   ]
 }
