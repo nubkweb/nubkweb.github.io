@@ -72,6 +72,7 @@ ul {
 ul.icon-list {
     padding: 0;
     color: #373737;
+    margin-top: 5px;
 }
 
 ul.icon-list li {
