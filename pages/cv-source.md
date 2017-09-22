@@ -36,6 +36,51 @@ permalink: /cv-source
       "title": "/nubk"
     }
   ],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "fluent"
+    },
+    {
+      "name": "Norwegian",
+      "proficiency": "good"
+    },
+    {
+      "name": "Cebuano",
+      "proficiency": "native"
+    },
+    {
+      "name": "Tagalog",
+      "proficiency": "native"
+    }
+  ],
+  "projects": [
+    {
+      "image": "pusheen-memory.png",
+      "name": "Pusheen memory game",
+      "link": "/pusheen-memory",
+      "description": "The game keeps your highscore in localStorage, and Pusheen's mood changes based on how well you are playing.",
+      "tags": [
+        "Jekyll",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "image": "cv.png",
+      "name": "Online CV",
+      "link": "#",
+      "description": "Online CV with JSON as data source <a target='_blank' href='/cv-source'>(view)</a>. Made with Liquid Template and CSS/design by me.",
+      "tags": [
+        "Jekyll",
+        "JSON",
+        "Liquid Template",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
   "education": [
     {
       "school": "Norwegian University of Science and Technology",
@@ -86,22 +131,6 @@ permalink: /cv-source
     {
       "icon": "book",
       "title": "Reading"
-    }
-  ],
-  "projects": [
-    {
-      "image": "pusheen-memory.png",
-      "name": "Pusheen memory game",
-      "link": "/pusheen-memory",
-      "description" : "The game keeps your highscore in localStorage, and Pusheen's mood changes based on how well you are playing.",
-      "tags": ["Jekyll", "HTML", "CSS", "JavaScript"]
-    },
-    {
-      "image": "cv.png",
-      "name": "Online CV",
-      "link": "#",
-      "description": "Online CV with JSON as data source <a target='_blank' href='/cv-source'>(view)</a>. Made with Liquid Template and CSS/design by me.",
-      "tags": ["Jekyll", "JSON", "Liquid Template", "HTML", "CSS"]
     }
   ]
 }
