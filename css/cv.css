@@ -58,6 +58,10 @@ main {
     padding: 20px;
 }
 
+#left-body h3 {
+    margin-bottom: 10px;
+}
+
 #right-body {
     float: left;
     width: calc(100% - 270px);
@@ -86,6 +90,20 @@ ul.social-list {
 
 ul.social-list li {
     margin-bottom: 15px;
+}
+
+ul.language-list {
+    padding: 0;
+    margin: 0;
+}
+
+ul.language-list li {
+    margin: 5px 0;
+}
+
+.language-list .proficiency {
+    font-size: 80%;
+    color: rgba(0, 0, 0, 0.70);
 }
 
 ul.cv-list p {

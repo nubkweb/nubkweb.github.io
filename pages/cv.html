@@ -26,12 +26,38 @@ css: cv.css
                 <li>
                     <i class="fa fa-fw fa-{{ social.icon }}" aria-hidden="true"></i>
                     <a target="_blank" href="{{ social.link }}">{{ social.title }}</a>
-
+                </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <h3>Languages</h3>
+        <ul class="language-list">
+            {% for language in cv.languages %}
+                <li>
+                    {{ language.name }}
+                    <span class="proficiency">({{ language.proficiency }})</span>
                 </li>
             {% endfor %}
         </ul>
     </div>
     <div id="right-body">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            {% for project in cv.projects %}
+                <li>
+                    <img class="project-image" src="/img/cv/{{ project.image }}">
+                    <div class="content">
+                        <a href="{{ project.link }}">{{ project.name }}</a>
+                        <p>{{ project.description }}</p>
+                        <ul class="project-tag-list">
+                            {% for tag in project.tags %}
+                                <li><span class="title">{{ tag }}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
         <h2>Education</h2>
         <ul class="cv-list">
             {% for education in cv.education %}
@@ -56,23 +82,6 @@ css: cv.css
                 <li>
                     <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
                     <span class="title">{{ interest.title }}</span>
-                </li>
-            {% endfor %}
-        </ul>
-        <h2>Projects</h2>
-        <ul class="project-list">
-            {% for project in cv.projects %}
-                <li>
-                    <img class="project-image" src="/img/cv/{{ project.image }}">
-                    <div class="content">
-                        <a href="{{ project.link }}">{{ project.name }}</a>
-                        <p>{{ project.description }}</p>
-                        <ul class="project-tag-list">
-                            {% for tag in project.tags %}
-                                <li><span class="title">{{ tag }}</span></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
                 </li>
             {% endfor %}
         </ul>
