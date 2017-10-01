@@ -39,6 +39,12 @@ css: cv.css
                 </li>
             {% endfor %}
         </ul>
+        <h3 class="tech-heading">Technologies</h3>
+        <ul class="tech-list">
+            {% for technology in cv.technologies %}
+                <li><span class="title">{{ technology }}</span></li>
+            {% endfor %}
+        </ul>
     </div>
     <div id="right-body">
         <h2>Projects</h2>

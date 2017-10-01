@@ -106,6 +106,19 @@ ul.language-list li {
     color: rgba(0, 0, 0, 0.70);
 }
 
+h3.tech-heading {
+    margin-top: 32px;
+}
+
+ul.tech-list {
+    padding: 0;
+    margin: 0;
+}
+
+ul.tech-list li {
+    margin: 5px 0;
+}
+
 ul.cv-list p {
     margin-top: 0;
 }
