@@ -81,6 +81,18 @@ permalink: /cv-source
       ]
     }
   ],
+  "technologies": [
+    "Java",
+    "JavaScript",
+    "Python",
+    "JSON",
+    "HTML",
+    "CSS",
+    "Node.js",
+    "Jekyll",
+    "Liquid Template",
+    "MySQL"
+  ],
   "education": [
     {
       "school": "Norwegian University of Science and Technology",
