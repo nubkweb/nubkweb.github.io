@@ -76,15 +76,18 @@
     }
   ],
   "technologies": [
-    "Java",
     "JavaScript",
-    "Python",
+    "Vue.js",
     "JSON",
+    "Axios",
     "HTML",
     "CSS",
     "Node.js",
     "Jekyll",
     "Liquid Template",
+    "Java",
+    "REST",
+    "Python",
     "MySQL"
   ],
   "education": [
