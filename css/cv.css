@@ -158,7 +158,7 @@ ul.tag-list .fa {
 }
 
 ul.project-list li {
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: 15px;
 }
 
