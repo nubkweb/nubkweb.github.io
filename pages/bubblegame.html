@@ -1,0 +1,284 @@
+---
+layout: default
+permalink: /bubble-game
+---
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+</head>
+<body>
+<div id="container">
+    <ul class="game-info">
+        <li>Score: <span id="score">...</span></li>
+        <li>Dots clicked: <span id="dots-clicked">...</span></li>
+        <li>Dots left: <span id="dots-left">...</span></li>
+        <li>Streak: <span id="streak">...</span></li>
+        <li>Highscore: <span id="highscore">...</span></li>
+    </ul>
+    <div id="board"></div>
+</div>
+
+<div id="result-modal">
+    <div id="result-content">
+        <h1>Your score: <span id="final-score">...</span></h1>
+        <div id="restart-button">Start new game</div>
+    </div>
+</div>
+</body>
+<script>
+
+    let rowNumber = 15;
+    let colNumber = 15;
+
+    let score = 0;
+    let dotsClicked = 0;
+    let dotsLeft = 250;
+    let streak = 0;
+    let highscore = localStorage.getItem("highscore") || 0;
+    createTable(rowNumber, colNumber);
+    updateGameInfo();
+
+    let gameLoop = setInterval(doStuff, 250);
+
+    function doStuff() {
+        drawDot(rowNumber, colNumber);
+        dotsLeft--;
+        updateGameInfo();
+        if (dotsLeft === 0) {
+            clearInterval(gameLoop);
+            setTimeout(() => showResultModal(), 5000);
+        }
+    }
+
+    document.getElementById("board").addEventListener("mousedown", event => {
+        if (event.target.classList.contains("dot")) {
+            dotsClicked++;
+            let time = new Date().getTime() - event.target.getAttribute("data-timestamp");
+            streak++;
+            if (event.target.classList.contains("golden")) {
+                score *= 2;
+            } else {
+                score += getDotScore(time) * streak;
+            }
+            event.target.outerHTML = "";
+            updateGameInfo();
+        } else {
+            streak = 0;
+        }
+    });
+
+    function getDotScore(x) {
+        if (x > 3500) {
+            return Math.floor((7000 - x) / 500);
+        } else {
+            return Math.floor(x / 500);
+        }
+    }
+
+    function createTable(numRows, numCols) {
+        let rows = "";
+        for (let row = 0; row < numRows; row++) {
+            let cells = "";
+            for (let col = 0; col < numCols; col++) {
+                cells += "<td></td>"
+            }
+            let tableRow = "<tr>" + cells + "</tr>";
+            rows += tableRow;
+        }
+        let colGroup = "<colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>";
+        let table = "<table id='board-table'>" + colGroup + rows + "</table>";
+        document.getElementById("board").innerHTML = table;
+    }
+
+    function updateGameInfo() {
+        document.getElementById("score").innerText = addLeadingZeros(score);
+        document.getElementById("dots-clicked").innerText = dotsClicked;
+        document.getElementById("dots-left").innerText = dotsLeft;
+        document.getElementById("streak").innerText = streak;
+        document.getElementById("highscore").innerText = highscore;
+    }
+
+    function drawDot(numRows, numCols) {
+        let randomRow = Math.floor(Math.random() * numRows);
+        let randomCol = Math.floor(Math.random() * numCols);
+        let startTime = new Date().getTime();
+        let type = Math.random() < 0.05 ? "golden" : "plain";
+        let dot = `<div class="dot ${type}" data-row-index="${randomRow}" data-col-index="${randomCol}" data-timestamp="${startTime}"></div>`;
+        let targetCell = document.getElementById("board-table").rows[randomRow].cells[randomCol];
+        if (targetCell.innerHTML === "" || isOld(targetCell)) {
+            targetCell.innerHTML = dot;
+        }
+
+        function isOld(cell) {
+            let time = new Date().getTime() - cell.getElementsByClassName("dot")[0].getAttribute("data-timestamp");
+            return time > 7000;
+            // getElementsByClassName("dot")[0] -> querySelector(".dot")
+        }
+    }
+
+    function showResultModal() {
+        document.getElementById("final-score").textContent = score;
+        document.getElementById("result-modal").style.display = "block";
+        if (score > highscore) {
+            highscore = score;
+            localStorage.setItem("highscore", highscore);
+        }
+    }
+
+    document.getElementById("restart-button").addEventListener("click", function (e) {
+        location.reload();
+    });
+
+    function addLeadingZeros(score) {
+        let length = score.toString().length;
+        if (length > 3) {
+            return score;
+        }
+        return "0".repeat(4 - length) + score;
+
+    }
+
+</script>
+<style>
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #354558;
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        background: #ffd742;
+        width: 800px;
+        margin: auto;
+    }
+
+    td {
+        width: 6.66667%;
+        text-align: center;
+        border: 1px solid #ffd742;
+        position: relative;
+    }
+
+    td:after {
+        content: '';
+        display: block;
+        margin-top: 100%;
+    }
+
+    tr:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    col:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    col:nth-child(even) {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .game-info {
+        background: #ffd742;
+        list-style: none;
+        padding: 15px 15px;
+        width: auto;
+        margin-bottom: 0;
+        margin: 0;
+        font-family: 'Amatic SC', cursive;
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    .game-info li {
+        display: inline-block;
+        padding-right: 30px;
+    }
+
+    #container {
+        border-radius: 8px;
+        overflow: hidden;
+        display: inline-block;
+        border: 2px solid #ffd742;
+    }
+
+    .dot {
+
+        height: 80%;
+        width: 80%;
+        border-radius: 100%;
+        margin: auto;
+        animation: createDot 7s forwards;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .dot.plain {
+        background: #7b4ad9;
+    }
+
+    .dot.golden {
+        background: gold;
+    }
+
+    @keyframes createDot {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    #result-modal {
+        padding: 50px;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(147, 147, 147, 0.555);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px 10000px rgba(0, 0, 0, 0.2);
+    }
+
+    #result-content {
+        margin: 20px auto;
+        font-family: 'Amatic SC', cursive;
+        text-align: center;
+    }
+
+    #restart-button {
+        background-color: #ded7ff;
+        margin: 0 auto;
+        margin-top: 10px;
+        max-width: 150px;
+        padding: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    li {
+        width: 120px;
+        height: 30px;
+
+    }
+</style>
