@@ -96,7 +96,7 @@ permalink: /cv-source
   "education": [
     {
       "school": "Norwegian University of Science and Technology",
-      "program": "Bachelor's Degree: Computer Engineering",
+      "program": "Bachelor's Degree: Software Engineering",
       "year": "2015 - 2018"
     },
     {

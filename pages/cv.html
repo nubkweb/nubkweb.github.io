@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /
+permalink: /cv
 css: cv.css
 ---
 
@@ -47,6 +47,15 @@ css: cv.css
         </ul>
     </div>
     <div id="right-body">
+        <h2>Education</h2>
+        <ul class="cv-list">
+            {% for education in cv.education %}
+                <li>
+                    <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
+                    <p>{{ education.school }}</p>
+                </li>
+            {% endfor %}
+        </ul>
         <h2>Projects</h2>
         <ul class="project-list">
             {% for project in cv.projects %}
@@ -61,15 +70,6 @@ css: cv.css
                             {% endfor %}
                         </ul>
                     </div>
-                </li>
-            {% endfor %}
-        </ul>
-        <h2>Education</h2>
-        <ul class="cv-list">
-            {% for education in cv.education %}
-                <li>
-                    <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
-                    <p>{{ education.school }}</p>
                 </li>
             {% endfor %}
         </ul>
