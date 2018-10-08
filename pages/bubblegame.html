@@ -35,7 +35,7 @@ permalink: /bubble-game
     let dotsClicked = 0;
     let dotsLeft = 250;
     let streak = 0;
-    let highscore = localStorage.getItem("highscore") || 0;
+    let highscore = localStorage.getItem("bubble-highscore") || 0;
     createTable(rowNumber, colNumber);
     updateGameInfo();
 
@@ -122,7 +122,7 @@ permalink: /bubble-game
         document.getElementById("result-modal").style.display = "block";
         if (score > highscore) {
             highscore = score;
-            localStorage.setItem("highscore", highscore);
+            localStorage.setItem("bubble-highscore", highscore);
         }
     }
 

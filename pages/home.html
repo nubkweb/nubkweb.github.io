@@ -1,0 +1,162 @@
+---
+layout: default
+permalink: /
+---
+
+<body>
+    <div id="container-1" >
+        <div class="title-holder width-limit">
+            <h1>Hi, I'm Nicole</h1>
+            <h3>
+                This page contains different projects I've made in my free time to practice my 
+                web development skills.
+            </h2>
+        </div>
+    </div>
+    <div id="container-2" >
+        <div class="flex width-limit">
+            <a class="project" href="https://nubkweb.github.io/cv" target="_blank"> 
+                <img src="/img/home/cv.png">
+                <h2>Online CV</h2>
+                <p>Detailed online CV designed by me. </p>
+                <p>Technologies: HTML, CSS, Jekyll/Liquid Template</p>
+            </a>
+            <a class="project" href="https://nubkweb.github.io/pusheen-memory" target="_blank"> 
+                <img src="/img/home/pusheen.png">
+                <h2>Memory Game</h2>
+                <p>A simple web-based memory game.</p>
+                <p>Technologies: HTML, CSS, JavaScript</p>
+            </a>
+            <a class="project" href="https://nubkweb.github.io/bubble-game" target="_blank"> 
+                <img src="/img/home/bubblegame.png">
+                <h2>Bubble Game</h2>
+                <p>An online bubble-clicking game made with JavaScript.</p>
+                <p>Technologies: HTML, CSS, JavaScript</p>
+            </a>
+        </div>
+    </div>
+    <div id="container-3">
+    </div>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    } 
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: rgb(228, 176, 183);
+        /*background-color: #eecbcb; #eab9b9 #c06c84*/
+        
+        /*background: linear-gradient(112deg, #ffdbdb, #fff6f6, #d2eeff);
+        background-size: 600% 600%;
+        -webkit-animation: AnimationName 32s ease infinite;
+        -moz-animation: AnimationName 32s ease infinite;
+        animation: AnimationName 32s ease infinite;*/
+    }
+
+    #container-1 {
+        background: white;
+        padding-bottom: 40px;
+        box-shadow: 0 -1px 10px rgba(0,0,0,0.25);
+    }
+    
+    h1, h3 {
+        font-family: 'PT Sans', sans-serif;
+        color: rgb(88, 78, 66);
+        text-align: center;
+        font-size: 58px;
+    }
+
+    h3 {
+        font-size: 18px;
+        text-align: center;
+        max-width: 500px;
+        font-weight: 400;
+        margin: 0 auto;
+    }
+
+    #container-2 {
+        padding-top: 24px;
+        margin: 0 auto 70px auto;
+        border-radius: 8px;
+    }
+
+    .flex {
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .project {
+        background-color: #ffffffcC;
+        transition: all .2s ease-in-out;
+        border-radius: 4px;
+        padding: 20px;
+        flex: 1;
+        flex-basis: 45%;
+        margin: 20px 2.5%;
+        border: 1px solid white;
+        box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.2);
+    }
+
+    .project:hover {
+        transform: scale(1.05); 
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.87);
+    }
+
+    .width-limit {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h2 {
+      font-family: 'Muli', sans-serif;
+      margin-bottom: 0;
+    }
+
+    p {
+        font-family: 'Titillium Web', sans-serif;
+        margin-top: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .project {
+            flex-basis: 100%;
+        }
+    }
+
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    /*@-webkit-keyframes AnimationName {
+        0%{background-position:0% 27%}
+        50%{background-position:100% 74%}
+        100%{background-position:0% 27%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 27%}
+        50%{background-position:100% 74%}
+        100%{background-position:0% 27%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:0% 27%}
+        50%{background-position:100% 74%}
+        100%{background-position:0% 27%}
+    }*/
+    
+</style>

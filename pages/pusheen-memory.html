@@ -81,7 +81,7 @@ css: pusheen.css
         highscore: 0
     }
 
-    game.highscore = localStorage.getItem("highscore") || 0;
+    game.highscore = localStorage.getItem("pusheen-highscore") || 0;
     highScoreDisplay.textContent = game.highscore;
 
     document.body.addEventListener("mousedown", function (e) {
@@ -119,7 +119,7 @@ css: pusheen.css
                     showVictoryDance();
                     if (game.score > game.highscore) {
                         game.highscore = game.score;
-                        localStorage.setItem("highscore", game.highscore);
+                        localStorage.setItem("pusheen-highscore", game.highscore);
                     }
                 }
                 reset();
