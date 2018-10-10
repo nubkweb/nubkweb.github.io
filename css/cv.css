@@ -12,6 +12,8 @@ body {
     max-width: 880px;
     margin: 35px auto 50px;
     box-shadow: 25px 25px 40px rgba(0, 0, 0, .45), -5px 0 20px rgba(0, 0, 0, .1); /*right, bottom, blur*/
+    overflow: auto;
+    background: #eee;
 }
 
 hr {
@@ -56,6 +58,7 @@ main {
     float: left;
     width: 270px;
     padding: 20px;
+    background: #eee;
 }
 
 #left-body h3 {
