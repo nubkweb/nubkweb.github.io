@@ -24,10 +24,9 @@ css: pusheen.css
     </div>
 </div>
 
-
 <script>
 
-    var imgArray = [
+    let imgArray = [
         "autumn.jpg",
         "bake.gif",
         "balloons.jpg",
@@ -45,30 +44,29 @@ css: pusheen.css
         "snowman.png"
     ];
 
-    var preload = document.getElementById("preload");
-    for (var i = 0; i < 15; i++) {
+    let preload = document.getElementById("preload");
+    for (let i = 0; i < 15; i++) {
         preload.insertAdjacentHTML("beforeend",
             `<img src="/img/pusheen/${imgArray[i]}">`
         )
     }
 
-    var pusheenMoodDisplay = document.getElementById("pusheenMood")
-    var numberOfMovesDisplay = document.getElementById("numberOfMoves")
-    var totalScoreDisplay = document.getElementById("totalScore")
-    var highScoreDisplay = document.getElementById("highScore")
-    var victoryModal = document.getElementById("victoryDiv")
-    var finalScoreDisplay = document.getElementById("finalScore")
-    var boardArray = imgArray.concat(imgArray);
+    let pusheenMoodDisplay = document.getElementById("pusheenMood");
+    let numberOfMovesDisplay = document.getElementById("numberOfMoves");
+    let totalScoreDisplay = document.getElementById("totalScore");
+    let victoryModal = document.getElementById("victoryDiv");
+    let finalScoreDisplay = document.getElementById("finalScore");
+    let boardArray = imgArray.concat(imgArray);
     shuffle(boardArray);
 
-    var board = document.getElementById("board");
-    for (var i = 0; i < 30; i++) {
+    let board = document.getElementById("board");
+    for (let i = 0; i < 30; i++) {
         board.insertAdjacentHTML("beforeend",
             `<img data-index="${i}" src="/img/pusheen/card_back.png">`
         )
     }
 
-    var game = {
+    let game = {
         locked: false,
         flipNumber: 0,
         firstFlip: {index: null, img: null},
@@ -79,13 +77,13 @@ css: pusheen.css
         score: 0,
         flips: 0,
         highscore: 0
-    }
+    };
 
     game.highscore = localStorage.getItem("pusheen-highscore") || 0;
-    highScoreDisplay.textContent = game.highscore;
+    document.getElementById("highScore").textContent = game.highscore;
 
     document.body.addEventListener("mousedown", function (e) {
-        var index = e.target.getAttribute("data-index");
+        let index = e.target.getAttribute("data-index");
 
         if (index === null || game.locked || !cardIsFacingDown(index)) {
             return; // nothing can happen after return
@@ -93,7 +91,7 @@ css: pusheen.css
 
         game.locked = true;
         game.flipNumber++;
-        var hiddenPusheen = figurativelyFlipCard(index);
+        let hiddenPusheen = figurativelyFlipCard(index);
 
         if (game.flipNumber === 1) {
             game.firstFlip = hiddenPusheen;
@@ -126,9 +124,6 @@ css: pusheen.css
             }
             setTimeout(updateGameStatus, 200);
         }
-        console.log(game.moves)
-
-
     });
 
     function victory() {
@@ -145,7 +140,7 @@ css: pusheen.css
     }
 
     function figurativelyFlipCard(index) {
-        var hiddenPusheen = boardArray[index];
+        let hiddenPusheen = boardArray[index];
         board.children[index].src = `/img/pusheen/${hiddenPusheen}`;
         return {index: index, img: hiddenPusheen};
     }
@@ -186,12 +181,10 @@ css: pusheen.css
         location.reload();
     });
 
-
     function shuffle(a) {
         for (let i = a.length; i; i--) {
             let j = Math.floor(Math.random() * i);
             [a[i - 1], a[j]] = [a[j], a[i - 1]];
         }
     }
-
 </script>

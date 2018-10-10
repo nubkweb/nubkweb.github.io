@@ -57,11 +57,21 @@ permalink: /cv-source
   "projects": [
     {
       "image": "pusheen-memory.png",
-      "name": "Pusheen memory game",
+      "name": "Memory Game",
       "link": "/pusheen-memory",
       "description": "The game keeps your highscore in localStorage, and Pusheen's mood changes based on how well you are playing.",
       "tags": [
-        "Jekyll",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "image": "bubble.png",
+      "name": "Bubble Game",
+      "link": "/bubble-game",
+      "description": "An online bubble-clicking game made with JavaScript.",
+      "tags": [
         "HTML",
         "CSS",
         "JavaScript"
@@ -82,15 +92,18 @@ permalink: /cv-source
     }
   ],
   "technologies": [
-    "Java",
     "JavaScript",
-    "Python",
+    "Vue.js",
     "JSON",
+    "Axios",
     "HTML",
     "CSS",
     "Node.js",
     "Jekyll",
     "Liquid Template",
+    "Java",
+    "REST",
+    "Python",
     "MySQL"
   ],
   "education": [
