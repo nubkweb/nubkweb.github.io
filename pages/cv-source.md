@@ -5,11 +5,11 @@ permalink: /cv-source
 
 ```
 {
-  "name": "Nicole Uybengkee",
+  "name": "Nicole Dyrnes",
   "details": [
     {
       "icon": "envelope",
-      "title": "nicole.ubk@outlook.com"
+      "title": "nicole.dyrnes@gmail.com"
     },
     {
       "icon": "phone",
@@ -18,40 +18,26 @@ permalink: /cv-source
     {
       "icon": "birthday-cake",
       "title": "03.02.1993"
-    },
-    {
-      "icon": "flag",
-      "title": "Norwegian citizen"
     }
   ],
   "social": [
     {
       "icon": "linkedin",
-      "link": "https://www.linkedin.com/in/nicole-uybengkee/",
-      "title": "/in/nicole-uybengkee"
+      "link": "https://www.linkedin.com/in/nicole-dyrnes/",
+      "title": "/in/nicole-dyrnes"
     },
     {
       "icon": "github-alt",
-      "link": "https://github.com/nubk",
-      "title": "/nubk"
+      "link": "https://github.com/nicole-git",
+      "title": "/nicole-git"
     }
   ],
   "languages": [
     {
-      "name": "English",
-      "proficiency": "fluent"
+      "name": "Norwegian"
     },
     {
-      "name": "Norwegian",
-      "proficiency": "good"
-    },
-    {
-      "name": "Cebuano",
-      "proficiency": "native"
-    },
-    {
-      "name": "Tagalog",
-      "proficiency": "native"
+      "name": "English"
     }
   ],
   "projects": [
