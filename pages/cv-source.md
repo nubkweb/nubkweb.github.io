@@ -107,11 +107,6 @@ permalink: /cv-source
       "school": "Atlanten videregående skole",
       "program": "Allmennfag",
       "year": "2011 - 2014"
-    },
-    {
-      "school": "Colegio de la Inmaculada Concepcion",
-      "program": "General Education",
-      "year": "2006 - 2010"
     }
   ],
   "experience": [
