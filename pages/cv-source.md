@@ -111,6 +111,11 @@ permalink: /cv-source
   ],
   "experience": [
     {
+      "company": "Indusenz AS",
+      "position": "Frontend Developer",
+      "year": "2019 - present"
+    },
+    {
       "company": "Bunnpris St. Hanshaugen",
       "position": "Cashier",
       "year": "2012 - 2014"
@@ -118,7 +123,7 @@ permalink: /cv-source
     {
       "company": "Myra barnehage",
       "position": "Assistant",
-      "year": "Summer 2010"
+      "year": "2010"
     }
   ],
   "interests": [
