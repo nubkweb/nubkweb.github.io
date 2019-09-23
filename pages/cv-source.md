@@ -80,6 +80,8 @@ permalink: /cv-source
   "technologies": [
     "JavaScript",
     "React.js",
+    "React Hooks",
+    "Material UI",
     "Vue.js",
     "JSON",
     "Axios",
