@@ -92,8 +92,6 @@ permalink: /cv-source
     "Liquid Template",
     "Java",
     "REST",
-    "Python",
-    "MySQL"
   ],
   "education": [
     {
