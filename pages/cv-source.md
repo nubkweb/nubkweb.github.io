@@ -114,7 +114,7 @@ permalink: /cv-source
     {
       "company": "Indusenz AS",
       "position": "Frontend Developer",
-      "year": "2019 - present"
+      "year": "2019"
     },
     {
       "company": "Bunnpris St. Hanshaugen",

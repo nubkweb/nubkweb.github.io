@@ -40,35 +40,21 @@
       "name": "Memory Game",
       "link": "/pusheen-memory",
       "description": "The game keeps your highscore in localStorage, and Pusheen's mood changes based on how well you are playing.",
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "image": "bubble.png",
       "name": "Bubble Game",
       "link": "/bubble-game",
       "description": "An online bubble-clicking game made with JavaScript.",
-      "tags": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "tags": ["HTML", "CSS", "JavaScript"]
     },
     {
       "image": "cv.png",
       "name": "Online CV",
       "link": "#",
       "description": "Online CV with JSON as data source <a target='_blank' href='/cv-source'>(view)</a>. Made with Liquid Template and CSS/design by me.",
-      "tags": [
-        "Jekyll",
-        "JSON",
-        "Liquid Template",
-        "HTML",
-        "CSS"
-      ]
+      "tags": ["Jekyll", "JSON", "Liquid Template", "HTML", "CSS"]
     }
   ],
   "technologies": [
@@ -85,7 +71,7 @@
     "Jekyll",
     "Liquid Template",
     "Java",
-    "REST",
+    "REST"
   ],
   "education": [
     {
@@ -108,7 +94,7 @@
     {
       "company": "Indusenz AS",
       "position": "Frontend Developer",
-      "year": "2019 - present"
+      "year": "2019"
     },
     {
       "company": "Bunnpris St. Hanshaugen",
