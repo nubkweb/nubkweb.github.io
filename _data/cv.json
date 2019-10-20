@@ -36,6 +36,13 @@
   ],
   "projects": [
     {
+      "image": "hiaf.png",
+      "name": "Online Portfolio",
+      "link": "https://www.imnicole.net",
+      "description": "A compilation of my projects and some illustrations.",
+      "tags": ["React", "React Hooks", "Material UI", "Affinity Designer"]
+    },
+    {
       "image": "pusheen-memory.png",
       "name": "Memory Game",
       "link": "/pusheen-memory",
@@ -48,13 +55,6 @@
       "link": "/bubble-game",
       "description": "An online bubble-clicking game made with JavaScript.",
       "tags": ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      "image": "cv.png",
-      "name": "Online CV",
-      "link": "#",
-      "description": "Online CV with JSON as data source <a target='_blank' href='/cv-source'>(view)</a>. Made with Liquid Template and CSS/design by me.",
-      "tags": ["Jekyll", "JSON", "Liquid Template", "HTML", "CSS"]
     }
   ],
   "technologies": [

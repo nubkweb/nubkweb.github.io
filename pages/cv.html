@@ -7,91 +7,101 @@ css: cv.css
 {% assign cv = site.data.cv %}
 
 <body>
-<header>
-    <h1>{{ cv.name }}</h1>
-</header>
-<main>
-    <div id="left-body">
+  <div class="paper">
+    <header>
+      <h1>{{ cv.name }}</h1>
+    </header>
+    <main>
+      <div id="left-body">
         <ul class="icon-list">
-            {% for details in cv.details %}
-                <li>
-                    <i class="fa fa-fw fa-{{ details.icon }}" aria-hidden="true"></i>
-                    <span class="title">{{ details.title }}</span>
-                </li>
-            {% endfor %}
+          {% for details in cv.details %}
+          <li>
+            <i class="fa fa-fw fa-{{ details.icon }}" aria-hidden="true"></i>
+            <span class="title">{{ details.title }}</span>
+          </li>
+          {% endfor %}
         </ul>
-        <hr>
+        <hr />
         <ul class="social-list">
-            {% for social in cv.social %}
-                <li>
-                    <i class="fa fa-fw fa-{{ social.icon }}" aria-hidden="true"></i>
-                    <a target="_blank" href="{{ social.link }}">{{ social.title }}</a>
-                </li>
-            {% endfor %}
+          {% for social in cv.social %}
+          <li>
+            <i class="fa fa-fw fa-{{ social.icon }}" aria-hidden="true"></i>
+            <a target="_blank" href="{{ social.link }}">{{ social.title }}</a>
+          </li>
+          {% endfor %}
         </ul>
-        <hr>
+        <hr />
         <h3>Languages</h3>
         <ul class="language-list">
-            {% for language in cv.languages %}
-                <li>
-                    {{ language.name }}
-                </li>
-            {% endfor %}
+          {% for language in cv.languages %}
+          <li>
+            {{ language.name }}
+          </li>
+          {% endfor %}
         </ul>
         <h3 class="tech-heading">Technologies</h3>
         <ul class="tech-list">
-            {% for technology in cv.technologies %}
-                <li><span class="title">{{ technology }}</span></li>
-            {% endfor %}
+          {% for technology in cv.technologies %}
+          <li>
+            <span class="title">{{ technology }}</span>
+          </li>
+          {% endfor %}
         </ul>
-    </div>
-    <div id="right-body">
+      </div>
+      <div id="right-body">
         <h2>Education</h2>
         <ul class="cv-list">
-            {% for education in cv.education %}
-                <li>
-                    <h3>{{ education.program }} <span class="year">({{ education.year }})</span></h3>
-                    <p>{{ education.school }}</p>
-                </li>
-            {% endfor %}
+          {% for education in cv.education %}
+          <li>
+            <h3>
+              {{ education.program }}
+              <span class="year">({{ education.year }})</span>
+            </h3>
+            <p>{{ education.school }}</p>
+          </li>
+          {% endfor %}
         </ul>
         <h2>Projects</h2>
         <ul class="project-list">
-            {% for project in cv.projects %}
+          {% for project in cv.projects %}
+          <li>
+            <img class="project-image" src="/img/cv/{{ project.image }}" />
+            <div class="content">
+              <a href="{{ project.link }}">{{ project.name }}</a>
+              <p>{{ project.description }}</p>
+              <ul class="project-tag-list">
+                {% for tag in project.tags %}
                 <li>
-                    <img class="project-image" src="/img/cv/{{ project.image }}">
-                    <div class="content">
-                        <a href="{{ project.link }}">{{ project.name }}</a>
-                        <p>{{ project.description }}</p>
-                        <ul class="project-tag-list">
-                            {% for tag in project.tags %}
-                                <li><span class="title">{{ tag }}</span></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                  <span class="title">{{ tag }}</span>
                 </li>
-            {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          {% endfor %}
         </ul>
         <h2>Experience</h2>
         <ul class="cv-list">
-            {% for experience in cv.experience %}
-                <li>
-                    <h3>{{ experience.position }} <span class="year">({{ experience.year }})</span></h3>
-                    <p>{{ experience.company }}</p>
-                </li>
-            {% endfor %}
+          {% for experience in cv.experience %}
+          <li>
+            <h3>
+              {{ experience.position }}
+              <span class="year">({{ experience.year }})</span>
+            </h3>
+            <p>{{ experience.company }}</p>
+          </li>
+          {% endfor %}
         </ul>
         <h2>Interests</h2>
         <ul class="tag-list">
-            {% for interest in cv.interests %}
-                <li>
-                    <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
-                    <span class="title">{{ interest.title }}</span>
-                </li>
-            {% endfor %}
+          {% for interest in cv.interests %}
+          <li>
+            <i class="fa fa-fw fa-{{ interest.icon }}" aria-hidden="true"></i>
+            <span class="title">{{ interest.title }}</span>
+          </li>
+          {% endfor %}
         </ul>
-    </div>
-</main>
-<footer>
-</footer>
+      </div>
+    </main>
+  </div>
 </body>
